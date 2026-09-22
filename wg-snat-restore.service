@@ -1,0 +1,10 @@
+[Unit]
+Description=Restore WireGuard SNAT Rules
+After=network.target nftables.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/restore-wg-snat.sh
+
+[Install]
+WantedBy=multi-user.target
